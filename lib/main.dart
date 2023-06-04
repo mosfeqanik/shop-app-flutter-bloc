@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/layout/cubit/cubit.dart';
 import 'package:shop_app/layout/shop_layout.dart';
-import 'package:shop_app/modules/login/shop_login_screen.dart';
 import 'package:shop_app/modules/on_boarding/boarding_screen.dart';
 import 'package:shop_app/shared/bloc_observer.dart';
 import 'package:shop_app/shared/components/constants.dart';
@@ -24,11 +23,9 @@ void main() async {
   bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
   token = CacheHelper.getData(key: 'token');
   if (onBoarding != null) {
-    if (token != null) {
-      widget = ShopLoginScreen();
-    } else {
-      widget = ShopLayout();
-    }
+    // if (token != null) {}
+    widget = ShopLayout();
+    // widget = ShopLoginScreen();
   } else {
     widget = OnBoardingScreen();
   }
